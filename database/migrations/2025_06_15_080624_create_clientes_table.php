@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('rg')->nullable(); // Registro Geral (RG) do cliente
             $table->date('data_nascimento')->nullable(); // Data de nascimento do cliente
             $table->string('rua'); // Rua do endereço do cliente
+            $table->string('bairro'); // Bairro do cliente
             $table->string('numero')->nullable(); // Número da residência
             $table->string('cidade'); // cidade do cliente (o sistema só atende uma cidade)
             $table->string('estado', 2); //Estado do cliente (duas siglas apenas (Pe) pq o sistema só atende uma cidade de Pernambuco)

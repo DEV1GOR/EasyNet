@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanoController; 
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // =========================================================================
-    // === ADICIONE ESTA LINHA AQUI DENTRO DO GRUPO DE MIDDLEWARE 'auth' ===
-    // =========================================================================
-    Route::resource('planos', PlanoController::class); // <-- ADICIONE ESTA LINHA
+    Route::resource('planos', PlanoController::class); 
+    Route::resource('clientes', ClienteController::class);
 });
 
 require __DIR__.'/auth.php';
